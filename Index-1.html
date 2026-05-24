@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  
+ <link rel="icon" href="https://i.ibb.co/6cNPwSMB/imgdownloader-5fd92d8d-modified.png">
+  <meta property="og:title" content="Faroukou MINTOIBA">
+<meta property="og:description" content="Voix singulier d'une Afrique souveraine, penseur de la génération noire contemporain, l'auteur démonte les mythes et restitue la vérité à ceux qui ont toujours su, mais qu'on n'a jamais écoutés.">
+<meta property="og:image" content="https://i.ibb.co/BHvmYSfP/Screenshot-20260513-184535.jpg">
+<meta property="og:url" content="https://elfk.netlify.app">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>MINTOIBA Faroukou — Auteur · Compositeur · Journaliste</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS VARIABLES & RESET
+============================================================ */
+:root {
+  --bg: #FFF8F0;
+  --bg2: #FFF3E6;
+  --surface: #FFFFFF;
+  --surface2: rgba(255,255,255,0.7);
+  --text: #1A0A00;
+  --text2: #5C3A1E;
+  --text3: #9B6B45;
+  --accent: #E8621A;
+  --accent2: #F5A623;
+  --accent3: #2D6A4F;
+  --border: rgba(232,98,26,0.15);
+  --shadow: rgba(232,98,26,0.12);
+  --glow: rgba(245,166,35,0.3);
+  --navbar-h: 72px;
+}
+[data-theme="dark"] {
+  --bg: #0D0805;
+  --bg2: #150D08;
+  --surface: #1E1209;
+  --surface2: rgba(30,18,9,0.8);
+  --text: #FFF3E6;
+  --text2: #D4A574;
+  --text3: #8C6239;
+  --accent: #F5823A;
+  --accent2: #F5C842;
+  --accent3: #52B788;
+  --border: rgba(245,130,58,0.2);
+  --shadow: rgba(245,130,58,0.15);
+  --glow: rgba(245,200,66,0.25);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  min-width: 0 !important;
+}
+  
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+::selection { background: var(--accent); color: #fff; }
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* ============================================================
+   BACKGROUND MESH GRADIENT
+============================================================ */
+.bg-mesh {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(245,166,35,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 20%, rgba(232,98,26,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 90%, rgba(45,106,79,0.07) 0%, transparent 60%),
+    var(--bg);
+  transition: background 0.5s;
+}
+[data-theme="dark"] .bg-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(245,130,58,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 20%, rgba(245,200,66,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 90%, rgba(82,183,136,0.06) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--navbar-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 60px);
+  backdrop-filter: blur(20px) saturate(1.5);
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.4s;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+.nav-links {
+  display: flex; align-items: center; gap: clamp(16px, 3vw, 36px);
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text2);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 1px; background: var(--accent);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform 0.3s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* THEME TOGGLE */
+.theme-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+  transition: all 0.3s;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.theme-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+.theme-icon { font-size: 0.9rem; transition: transform 0.5s; }
+.theme-btn:hover .theme-icon { transform: rotate(180deg); }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: calc(var(--navbar-h) + 40px) clamp(20px, 8vw, 120px) 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  background: rgba(232,98,26,0.1);
+  border: 1px solid rgba(232,98,26,0.25);
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s ease both;
+}
+.badge-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; animation: pulse-dot 1.5s infinite; }
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s 0.1s ease both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+  display: block;
+}
+.hero-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+.hero-desc {
+  font-size: 1.25rem;
+  color: var(--text2);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 44px;
+  animation: fadeInUp 0.8s 0.3s ease both;
+}
+.hero-ctas {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeInUp 0.8s 0.4s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 24px rgba(232,98,26,0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(232,98,26,0.45);
+  background: #d4540e;
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* HERO VISUAL */
+.hero-visual {
+  display: flex; flex-direction: column; gap: 20px;
+  animation: fadeInRight 1s 0.2s ease both;
+  position: relative;
+}
+.hero-stat-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.hero-quote-card {
+  background: linear-gradient(135deg, var(--accent) 0%, #c4530f 100%);
+  border-radius: 12px;
+  padding: 28px;
+  color: white;
+}
+.hero-quote-card blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.hero-quote-card cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Floating elements */
+.float-tag {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text2);
+  white-space: nowrap;
+  box-shadow: 0 8px 24px var(--shadow);
+  animation: float 4s ease-in-out infinite;
+}
+.float-tag:nth-child(1) { top: -20px; right: 60px; animation-delay: 0s; }
+.float-tag:nth-child(2) { top: 50%; right: -30px; animation-delay: 1.5s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   SECTION BASE
+============================================================ */
+section { padding: clamp(60px, 8vw, 120px) clamp(20px, 8vw, 120px); }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section-label::before, .section-label::after {
+  content: ''; display: block;
+  width: 30px; height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.1;
+}
+.section-desc {
+  font-size: 1.15rem;
+  color: var(--text2);
+  max-width: 600px;
+  margin: 16px auto 0;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   DIVIDER
+============================================================ */
+.divider {
+  display: flex; align-items: center; gap: 20px;
+  padding: 0 clamp(20px, 8vw, 120px);
+  margin-bottom: 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--border); }
+.divider-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+/* ============================================================
+   LIVRES SECTION
+============================================================ */
+#livres { background: var(--bg2); }
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 48px;
+}
+.book-card {
+  background: var(--surface);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+.book-card:hover {
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 32px 80px var(--shadow);
+}
+.book-gallery {
+  position: relative;
+  background: linear-gradient(135deg, #1a0a00, #3d1a00);
+  padding: 32px;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-gallery::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(245,166,35,0.15) 0%, transparent 70%);
+}
+.gallery-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 200px;
+}
+.gallery-img {
+  position: absolute;
+  height: 180px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  object-fit: cover;
+}
+.gallery-img.active { transform: translateX(0) scale(1.08) rotate(0deg); z-index: 3; opacity: 1; }
+.gallery-img.prev { transform: translateX(-65px) scale(0.85) rotate(-6deg); z-index: 2; opacity: 0.7; }
+.gallery-img.next { transform: translateX(65px) scale(0.85) rotate(6deg); z-index: 2; opacity: 0.7; }
+.gallery-img.hidden { transform: translateX(0) scale(0.7); z-index: 1; opacity: 0; }
+
+.gallery-nav {
+  position: absolute;
+  bottom: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 10;
+}
+.gallery-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.gallery-dot.active { background: var(--accent2); width: 18px; border-radius: 3px; }
+
+.book-year-tag {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--accent);
+  color: white;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  z-index: 5;
+}
+.book-num-tag {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.7);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  z-index: 5;
+}
+.book-content { padding: 32px; padding-top: 40px; }
+.book-genre {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.book-desc {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.book-themes {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 24px;
+}
+.theme-tag {
+  padding: 4px 12px;
+  background: rgba(232,98,26,0.08);
+  border: 1px solid rgba(232,98,26,0.2);
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.book-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.book-author-mini {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+}
+.book-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.book-cta:hover { background: var(--accent); transform: translateX(4px); }
+
+/* ============================================================
+   BIOGRAPHIE SECTION
+============================================================ */
+#biographie {
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+#biographie::before {
+  content: '"';
+  position: absolute;
+  top: -40px; left: clamp(10px, 5vw, 80px);
+  font-family: 'Playfair Display', serif;
+  font-size: 30rem;
+  color: var(--accent);
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+.bio-timeline {
+  display: flex; flex-direction: column; gap: 0;
+}
+.timeline-item {
+  display: flex; gap: 20px;
+  position: relative;
+}
+.timeline-item:not(:last-child)::before {
+  content: ''; position: absolute;
+  left: 19px; top: 40px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+.timeline-dot {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--accent);
+  position: relative; z-index: 1;
+}
+.timeline-content { padding-bottom: 40px; }
+.timeline-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.timeline-desc {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.bio-text-col {}
+.bio-intro {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 32px;
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+}
+.bio-body { font-size: 1.05rem; color: var(--text2); line-height: 1.85; }
+.bio-body p { margin-bottom: 20px; }
+.bio-body strong { color: var(--text); font-weight: 600; }
+
+.bio-skills {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.skill-item {
+  text-align: center;
+  padding: 20px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.skill-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+.skill-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.skill-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+}
+
+/* ============================================================
+   BIBLIOGRAPHIE
+============================================================ */
+#bibliographie { background: var(--bg2); }
+.biblio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+.biblio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: all 0.3s;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.biblio-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px var(--shadow);
+}
+.biblio-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0.4;
+  line-height: 1;
+}
+.biblio-type {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.biblio-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.biblio-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+}
+.biblio-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.biblio-topic {
+  padding: 3px 10px;
+  background: rgba(232,98,26,0.07);
+  border-radius: 100px;
+  font-size: 0.65rem;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ============================================================
+   RÉSEAUX SOCIAUX
+============================================================ */
+#reseaux { background: var(--bg); }
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.social-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.social-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 24px 60px var(--shadow);
+}
+.social-header {
+  position: relative;
+  padding: 28px 28px 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.social-pfp-wrap {
+  position: relative;
+}
+.social-pfp {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.social-verified {
+  position: absolute; bottom: 2px; right: 2px;
+  width: 22px; height: 22px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem;
+  color: white;
+  border: 2px solid var(--surface);
+}
+.social-platform-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+.social-card:hover .social-platform-icon { transform: rotate(10deg) scale(1.1); }
+.social-body { padding: 16px 28px 28px; }
+.social-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.social-handle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+.social-bio-text {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.social-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.social-follow-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  background: transparent;
+}
+.social-card:hover .social-follow-btn {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+.social-arrow {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text2);
+  transition: all 0.3s;
+}
+.social-card:hover .social-arrow {
+  background: var(--accent);
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Instagram gradient */
+.social-card[data-platform="instagram"] .social-platform-icon {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  color: white;
+}
+/* Facebook */
+.social-card[data-platform="facebook"] .social-platform-icon {
+  background: #1877F2;
+  color: white;
+}
+/* X/Twitter */
+.social-card[data-platform="x"] .social-platform-icon {
+  background: #000;
+  color: white;
+}
+[data-theme="dark"] .social-card[data-platform="x"] .social-platform-icon {
+  background: #fff;
+  color: #000;
+}
+
+/* ============================================================
+   MANIFESTE / COMBATS
+============================================================ */
+#manifeste {
+  background: linear-gradient(160deg, #1a0a00 0%, #0d0805 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+#manifeste::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 20% 50%, rgba(232,98,26,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(245,166,35,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.manifeste-inner { position: relative; z-index: 1; }
+#manifeste .section-label { color: var(--accent2); }
+#manifeste .section-label::before, #manifeste .section-label::after { background: var(--accent2); }
+#manifeste .section-title { color: #fff; }
+.manifeste-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 0;
+}
+.manifeste-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+.manifeste-card:hover {
+  background: rgba(232,98,26,0.15);
+  border-color: rgba(232,98,26,0.4);
+  transform: translateY(-6px);
+}
+.manifeste-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.manifeste-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.manifeste-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   CITATION MARQUEE
+============================================================ */
+.marquee-section {
+  overflow: hidden;
+  padding: 28px 0;
+  background: var(--accent);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.marquee-track {
+  display: flex; gap: 0;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-item {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 20px;
+  padding: 0 40px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+.marquee-sep { opacity: 0.4; }
+
+/* ============================================================
+   NEWSLETTER / CONTACT SECTION
+============================================================ */
+#contact {
+  background: var(--bg2);
+  text-align: center;
+}
+.contact-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+}
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.contact-desc {
+  font-size: 1.05rem;
+  color: var(--text2);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.newsletter-form {
+  display: flex; gap: 12px;
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  transition: border 0.3s;
+  outline: none;
+}
+.newsletter-input:focus { border-color: var(--accent); }
+.newsletter-input::placeholder { color: var(--text3); }
+.contact-social-links {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-social-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--text2);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+}
+.contact-social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 40px clamp(20px, 8vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+}
+.footer-links {
+  display: flex; gap: 24px;
+  list-style: none;
+}
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   PROGRESS BAR
+============================================================ */
+.progress-bar {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .bio-grid { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr; }
+  .bio-skills { grid-template-columns: repeat(2, 1fr); }
+  nav .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .bio-skills { grid-template-columns: 1fr 1fr; }
+  .newsletter-form { flex-direction: column; }
+  footer { flex-direction: column; text-align: center; }
+  .biblio-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CURSOR CUSTOM (desktop only)
+============================================================ */
+@media (hover: hover) {
+  body { cursor: none; }
+  .custom-cursor {
+    position: fixed; z-index: 99999;
+    pointer-events: none;
+    transition: transform 0.15s ease;
+  }
+  .cursor-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+    z-index: 99999;
+    pointer-events: none;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transition: all 0.12s ease-out;
+    opacity: 0.5;
+    z-index: 99998;
+    pointer-events: none;
+  }
+  a:hover ~ .cursor-dot, button:hover ~ .cursor-dot { width: 14px; height: 14px; }
+}
+
+/* Smooth mobile nav */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.4rem;
+}
+@media (max-width: 900px) {
+  .mobile-nav-toggle { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- Background mesh -->
+<div class="bg-mesh"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    MINTOIBA
+  </a>
+  <ul class="nav-links">
+    <li><a href="#livres">Livres</a></li>
+    <li><a href="#biographie">Biographie</a></li>
+    <li><a href="#bibliographie">Bibliographie</a></li>
+    <li><a href="#reseaux">Réseaux</a></li>
+    <li><a href="#manifeste">Manifeste</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">
+    <span class="theme-icon" id="themeIcon">☀️</span>
+    <span id="themeLabel">Mode Sombre</span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="accueil">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><div class="badge-dot"></div> Auteur · Compositeur · Journaliste</div>
+      <h1 class="hero-title">
+        MINTOIBA
+        <em>Faroukou</em>
+      </h1>
+      <p class="hero-subtitle">Togolais · Istanbuul · Monde</p>
+      <p class="hero-desc">
+        Voix singulier d'une Afrique souveraine, penseur de la génération noire contemporain, l'auteur démonte les mythes et restitue la vérité à ceux qui ont toujours su, mais qu'on n'a jamais écoutés.
+      </p>
+      <div class="hero-ctas">
+        <a href="#livres" class="btn-primary">✦ Découvrir ses livres</a>
+        <a href="#biographie" class="btn-secondary">Lire la biographie →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <span class="float-tag">📍 Istanbul, Türkiye</span>
+      <span class="float-tag">✦ En tournée littéraire</span>
+      <div class="hero-stat-grid">
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Livres publiés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Mythes brisés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">'98</div>
+          <div class="stat-label">Né au Togo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Continents touchés</div>
+        </div>
+      </div>
+      <div class="hero-quote-card">
+        <blockquote>« L'Afrique n'est pas un problème à résoudre. C'est une civilisation à comprendre. »</blockquote>
+        <cite>— MINTOIBA Faroukou</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">✦ Auteur<span class="marquee-sep"> · </span>Conférencier<span class="marquee-sep"> · </span>Activiste</span>
+    <span class="marquee-item">✦ Afrique du point de vue d'un Africain</span>
+    <span class="marquee-item">✦ Le Drame Psychologique de la Jeune Génération Noire</span>
+    <span class="marquee-item">✦ Togo<span class="marquee-sep"> → </span>Istanbul<span class="marquee-sep"> → </span>Monde</span>
+    <span class="marquee-item">✦ Vérité · Mémoire · Dignité</span>
+    <span class="marquee-item">✦ Auteur<span class="marquee-sep"> · </span>Conférencier<span class="marquee-sep"> · </span>Activiste</span>
+    <span class="marquee-item">✦ Afrique du point de vue d'un Africain</span>
+    <span class="marquee-item">✦ Le Drame Psychologique de la Jeune Génération Noire</span>
+    <span class="marquee-item">✦ Togo<span class="marquee-sep"> → </span>Istanbul<span class="marquee-sep"> → </span>Monde</span>
+    <span class="marquee-item">✦ Vérité · Mémoire · Dignité</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     LIVRES
+============================================================ -->
+<section id="livres">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Œuvres littéraires</div>
+      <h2 class="section-title">Ses Livres</h2>
+      <p class="section-desc">Deux œuvres qui questionnent les récits dominants et donnent la parole à ceux dont la voix a trop longtemps été confisquée.</p>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- LIVRE 1 -->
+      <div class="book-card reveal reveal-delay-1">
+        <div class="book-gallery">
+          <span class="book-year-tag">2018</span>
+          <span class="book-num-tag">Livre 01</span>
+          <div class="gallery-carousel" id="gallery1">
+            <img class="gallery-img active" src="https://i.ibb.co/0RqWw6Jn/Screenshot-20260513-184600.jpg" alt="L'Afrique du point de vue d'un Africain ">
+            <img class="gallery-img next" src="https://i.ibb.co/8gYdR4kL/Screenshot-20260513-184353.jpg" alt="L'Afrique du point de vue d'un Africain ">
+            <img class="gallery-img hidden" src="https://i.ibb.co/BHvmYSfP/Screenshot-20260513-184535.jpg" alt="L'Afrique du point de vue d'un Africain">
+          </div>
+          <div class="gallery-nav" id="nav1">
+            <div class="gallery-dot active" onclick="goTo(1,0)"></div>
+            <div class="gallery-dot" onclick="goTo(1,1)"></div>
+            <div class="gallery-dot" onclick="goTo(1,2)"></div>
+          </div>
+        </div>
+        <div class="book-content">
+          <div class="book-genre">Essai · Géopolitique · Identité</div>
+          <h3 class="book-title">L'Afrique du Point de Vue d'un Africain</h3>
+          <p class="book-desc">Un témoignage bouleversant né d'un choc culturel à Istanbul : confronté aux préjugés des Occidentaux sur son continent, Faroukou prend la plume pour rectifier, informer et revendiquer. Un essai-manifeste qui déconstruit les stéréotypes colonisateurs et réhabilite la complexité, la richesse et la modernité de l'Afrique — vue de l'intérieur, vécue de l'intérieur.</p>
+          <div class="book-themes">
+            <span class="theme-tag">Désinformation</span>
+            <span class="theme-tag">Identité africaine</span>
+            <span class="theme-tag">Mythes coloniaux</span>
+            <span class="theme-tag">Diaspora</span>
+            <span class="theme-tag">Vérité</span>
+          </div>
+          <div class="book-footer">
+            <span class="book-author-mini">MINTOIBA Faroukou</span>
+            <a href="#contact" class="book-cta">Actualités →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVRE 2 -->
+      <div class="book-card reveal reveal-delay-2">
+        <div class="book-gallery">
+          <span class="book-year-tag">2025</span>
+          <span class="book-num-tag">Livre 02</span>
+          <div class="gallery-carousel" id="gallery2">
+            <img class="gallery-img active" src="https://i.ibb.co/M5QKvQzQ/mock-00037.png" alt="Le Drame Psychologique - couverture 1">
+            <img class="gallery-img next" src="https://i.ibb.co/S4Zt5TJ7/mock-00789.png" alt="Le Drame Psychologique - couverture 2">
+            <img class="gallery-img hidden" src="https://i.ibb.co/KxXg2wnb/mock-00530.png" alt="Le Drame Psychologique - couverture 3">
+            <img class="gallery-img hidden" src="https://i.ibb.co/Kjfz6zvF/mock-00042.png" alt="Le Drame Psychologique - couverture 4">
+          </div>
+          <div class="gallery-nav" id="nav2">
+            <div class="gallery-dot active" onclick="goTo(2,0)"></div>
+            <div class="gallery-dot" onclick="goTo(2,1)"></div>
+            <div class="gallery-dot" onclick="goTo(2,2)"></div>
+            <div class="gallery-dot" onclick="goTo(2,3)"></div>
+          </div>
+        </div>
+        <div class="book-content">
+          <div class="book-genre">Essai · Psychologie sociale · Jeunesse</div>
+          <h3 class="book-title">Le Drame Psychologique de la Jeune Génération Noire</h3>
+          <p class="book-desc">Une radiographie implacable de la fracture intérieure que vivent les jeunes Noirs d'aujourd'hui : tiraillés entre des promesses non tenues, des rêves systématiquement brisés et une société qui leur tend des miroirs déformants. Faroukou analyse avec lucidité et empathie les mécanismes d'une aliénation collective — et esquisse des voies de libération.</p>
+          <div class="book-themes">
+            <span class="theme-tag">Rêves brisés</span>
+            <span class="theme-tag">Fausses promesses</span>
+            <span class="theme-tag">Trauma générationnel</span>
+            <span class="theme-tag">Résilience</span>
+            <span class="theme-tag">Jeunesse noire</span>
+          </div>
+          <div class="book-footer">
+            <span class="book-author-mini">MINTOIBA Faroukou</span>
+            <a href="#contact" class="book-cta">Actualités →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BIOGRAPHIE
+============================================================ -->
+<section id="biographie">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Qui est-il ?</div>
+      <h2 class="section-title">Biographie</h2>
+    </div>
+    <div class="bio-grid">
+      <!-- Timeline -->
+      <div class="bio-timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-dot">98</div>
+          <div class="timeline-content">
+            <div class="timeline-year">1998 · Togo</div>
+            <div class="timeline-title">Naissance & Éveil</div>
+            <div class="timeline-desc">Naissance au Togo, berceau d'une Afrique vivante et résiliente. Années de formation intellectuelle et humaine dans ce pays à l'histoire riche.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">17</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2017 · Istanbul</div>
+            <div class="timeline-title">Le Choc des Représentations</div>
+            <div class="timeline-desc">Arrivée en Turquie pour poursuivre ses études. La confrontation avec les préjugés occidentaux sur l'Afrique provoque un déclic littéraire majeur.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">18</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">Premier Livre Publié</div>
+            <div class="timeline-desc">Parution de <em>L'Afrique du Point de Vue d'un Africain</em>. Un coup d'éclat littéraire et intellectuel qui circule bien au-delà des frontières africaines.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">✦</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">Second Livre : La Génération</div>
+            <div class="timeline-desc">Parution du <em>Drame Psychologique de la Jeune Génération Noire</em>. L'auteur élargit son propos à la condition psychologique et sociale de la jeunesse africaine.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">●</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Aujourd'hui</div>
+            <div class="timeline-title">Voix en Mouvement</div>
+            <div class="timeline-desc">Auteur, journaliste et compositeur actif, il continue d'interpeller, d'informer et de construire une contre-narration puissante sur l'Afrique et ses peuples.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio text -->
+      <div class="bio-text-col reveal reveal-delay-2">
+        <p class="bio-intro">
+          « Il y a des silences que l'histoire officielle entretient avec soin. MINTOIBA Faroukou, lui, a décidé de parler. »
+        </p>
+        <div class="bio-body">
+          <p>Né en <strong>1998 au Togo</strong>, MINTOIBA Faroukou grandit au cœur d'une Afrique que les manuels scolaires occidentaux ne décrivent pas — une Afrique complexe, plurielle, vibrante de culture et d'intelligence. Après des années de formation au Togo, il s'envole en <strong>2017 pour Istanbul</strong>, en Turquie, afin d'y poursuivre des études supérieures.</p>
+          <p>C'est dans cette métropole au carrefour de l'Orient et de l'Occident qu'il se heurte à une réalité déconcertante : les représentations que beaucoup d'Européens se font de l'Afrique — un continent sans eau potable, sans écoles, sans électricité, peuplé de misère — sont non seulement fausses, mais profondément ancrées. Pour Faroukou, l'incompréhension n'est pas seulement culturelle, elle est politique.</p>
+          <p>Refusant l'indignation stérile, il choisit <strong>la littérature comme arme</strong>. Son premier essai, <em>L'Afrique du Point de Vue d'un Africain</em>, est une réponse directe, documentée et intime aux discours déformants qui circulent sur son continent. Son second ouvrage plonge dans la psychologie de la jeunesse noire contemporaine, prisonnière de rêves confisqués et de promesses non tenues.</p>
+          <p>Auteur, mais aussi <strong>compositeur et journaliste</strong>, Faroukou incarne une génération qui refuse de n'être définie que par le regard des autres. Il continue aujourd'hui de créer, d'écrire et de dénoncer, convaincu que <em>l'Afrique est non seulement la mémoire du monde, mais son avenir.</em></p>
+        </div>
+        <div class="bio-skills">
+          <div class="skill-item">
+            <div class="skill-icon">📖</div>
+            <div class="skill-name">Auteur</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🎵</div>
+            <div class="skill-name">Compositeur</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">✍️</div>
+            <div class="skill-name">Journaliste</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🌍</div>
+            <div class="skill-name">Militant</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🎙️</div>
+            <div class="skill-name">Conférencier</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🔥</div>
+            <div class="skill-name">Penseur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BIBLIOGRAPHIE
+============================================================ -->
+<section id="bibliographie">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Catalogue complet</div>
+      <h2 class="section-title">Bibliographie</h2>
+      <p class="section-desc">L'ensemble des œuvres publiées, classées et documentées.</p>
+    </div>
+    <div class="biblio-grid">
+      <div class="biblio-card reveal reveal-delay-1">
+        <div class="biblio-num">01</div>
+        <div class="biblio-type">Essai · Identité</div>
+        <div class="biblio-title">L'Afrique du Point de Vue d'un Africain</div>
+        <div class="biblio-meta">MINTOIBA Faroukou · 2018 · Istanbul</div>
+        <div class="biblio-topics">
+          <span class="biblio-topic">Géopolitique</span>
+          <span class="biblio-topic">Identité</span>
+          <span class="biblio-topic">Décolonisation</span>
+        </div>
+      </div>
+      <div class="biblio-card reveal reveal-delay-2">
+        <div class="biblio-num">02</div>
+        <div class="biblio-type">Essai · Psychologie sociale</div>
+        <div class="biblio-title">Le Drame Psychologique de la Jeune Génération Noire</div>
+        <div class="biblio-meta">MINTOIBA Faroukou · 2025</div>
+        <div class="biblio-topics">
+          <span class="biblio-topic">Jeunesse</span>
+          <span class="biblio-topic">Trauma</span>
+          <span class="biblio-topic">Résilience</span>
+        </div>
+      </div>
+      <div class="biblio-card reveal reveal-delay-3">
+        <div class="biblio-num">◎</div>
+        <div class="biblio-type">En préparation</div>
+        <div class="biblio-title">Prochain Ouvrage</div>
+        <div class="biblio-meta">À paraître · MINTOIBA Faroukou</div>
+        <div class="biblio-topics">
+          <span class="biblio-topic">À venir</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RÉSEAUX SOCIAUX
+============================================================ -->
+<section id="reseaux">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Suivre l'auteur</div>
+      <h2 class="section-title">Réseaux Sociaux</h2>
+      <p class="section-desc">Rejoignez MINTOIBA Faroukou sur ses plateformes et participez à la conversation.</p>
+    </div>
+    <div class="social-grid">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/mtb_elfk?igsh=emhsaTBvMWExczdl" target="_blank" rel="noopener" class="social-card" data-platform="instagram">
+        <div class="social-header">
+          <div class="social-pfp-wrap">
+            <img class="social-pfp" src="https://i.ibb.co/d4XjJqGt/Screenshot-20260222-161410.jpg" alt="Photo de profil Instagram de MINTOIBA Faroukou">
+            <div class="social-verified">✓</div>
+          </div>
+          <div class="social-platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+        </div>
+        <div class="social-body">
+          <div class="social-name">MINTOIBA Faroukou</div>
+          <div class="social-handle">@mtb_elfk</div>
+          <div class="social-bio-text">Pensées sur l'Afrique, la création et le monde. Auteur · Compositeur · Journaliste. 🇹🇬</div>
+          <div class="social-footer">
+            <div class="social-follow-btn">+ Suivre</div>
+            <div class="social-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/Elfaroukmtb/" target="_blank" rel="noopener" class="social-card" data-platform="facebook">
+        <div class="social-header">
+          <div class="social-pfp-wrap">
+            <img class="social-pfp" src="https://i.ibb.co/DfxLJpsC/Screenshot-20260222-171655.jpg" alt="Photo de profil Facebook de MINTOIBA Faroukou">
+            <div class="social-verified">✓</div>
+          </div>
+          <div class="social-platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+        </div>
+        <div class="social-body">
+          <div class="social-name">Elfarouk Mtb</div>
+          <div class="social-handle">@Elfaroukmtb</div>
+          <div class="social-bio-text">Page officielle. Actualités littéraires, réflexions sur l'Afrique et la jeunesse noire. Rejoignez la communauté.</div>
+          <div class="social-footer">
+            <div class="social-follow-btn">+ Suivre</div>
+            <div class="social-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- X / Twitter -->
+      <a href="https://x.com/elfaroukmtb" target="_blank" rel="noopener" class="social-card" data-platform="x">
+        <div class="social-header">
+          <div class="social-pfp-wrap">
+            <img class="social-pfp" src="https://i.ibb.co/1tmKkjhR/Screenshot-20260222-192803.jpg" alt="Photo de profil X de MINTOIBA Faroukou">
+            <div class="social-verified">✓</div>
+          </div>
+          <div class="social-platform-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+        </div>
+        <div class="social-body">
+          <div class="social-name">Elfarouk Mtb</div>
+          <div class="social-handle">@elfaroukmtb</div>
+          <div class="social-bio-text">Fil d'actualité, opinions tranchées et réflexions sur l'Afrique, la désinformation et la jeunesse contemporaine.</div>
+          <div class="social-footer">
+            <div class="social-follow-btn">+ Suivre</div>
+            <div class="social-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MANIFESTE / COMBATS
+============================================================ -->
+<section id="manifeste">
+  <div class="manifeste-inner container">
+    <div class="section-header reveal">
+      <div class="section-label">Ce pour quoi il se bat</div>
+      <h2 class="section-title" style="color:#fff">Son Manifeste</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.6)">Les grandes causes qui traversent chacune de ses œuvres et chacun de ses mots.</p>
+    </div>
+    <div class="manifeste-grid">
+      <div class="manifeste-card reveal reveal-delay-1">
+        <div class="manifeste-icon">🌍</div>
+        <div class="manifeste-title">Contre la Désinformation sur l'Afrique</div>
+        <div class="manifeste-desc">Battre en brèche les mythes véhiculés par les médias et les discours occidentaux sur un continent présenté comme arriéré ou pitoyable. L'Afrique a de l'eau, des villes, des universités, des rêves.</div>
+      </div>
+      <div class="manifeste-card reveal reveal-delay-2">
+        <div class="manifeste-icon">🧠</div>
+        <div class="manifeste-title">Guérir la Psychologie de la Jeunesse Noire</div>
+        <div class="manifeste-desc">Identifier et dénoncer les mécanismes qui brisent les rêves de la jeune génération noire : promesses d'ascension sociale illusoires, invisibilité systémique, aliénation identitaire.</div>
+      </div>
+      <div class="manifeste-card reveal reveal-delay-3">
+        <div class="manifeste-icon">✊</div>
+        <div class="manifeste-title">Restituer la Dignité & la Mémoire</div>
+        <div class="manifeste-desc">Rappeler que l'Afrique est le berceau de l'humanité, une civilisation dont l'apport au monde est incalculable. Cette mémoire n'est pas négociable.</div>
+      </div>
+      <div class="manifeste-card reveal reveal-delay-4">
+        <div class="manifeste-icon">🔥</div>
+        <div class="manifeste-title">La Littérature comme Résistance</div>
+        <div class="manifeste-desc">Écrire n'est pas un luxe, c'est un acte politique. Chaque livre, chaque article, chaque composition est une bataille contre l'effacement et l'indifférence.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / NEWSLETTER
+============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-title">Restons en Contact</div>
+      <p class="contact-desc">Recevez les actualités littéraires, les nouvelles publications et les prises de parole de MINTOIBA Faroukou directement dans votre boîte mail.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="votre@email.com">
+        <button class="btn-primary" onclick="handleSubscribe(this)">S'inscrire →</button>
+      </div>
+      <div class="contact-social-links">
+        <a href="https://www.instagram.com/mtb_elfk" target="_blank" class="contact-social-link">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/Elfaroukmtb/" target="_blank" class="contact-social-link">
+          <i class="fa-brands fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://x.com/elfaroukmtb" target="_blank" class="contact-social-link">
+          <i class="fa-brands fa-x-twitter"></i> X (Twitter)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-logo">MINTOIBA Faroukou</div>
+  <p class="footer-copy">© 2026 MINTOIBA Faroukou · Tous droits réservés</p>
+  <span class="footer-logo">Fait par Zack • with love 💖</span>
+  <ul class="footer-links">
+    <li><a href="#livres">Livres</a></li>
+    <li><a href="#biographie">Biographie</a></li>
+    <li><a href="#reseaux">Réseaux</a></li>
+  </ul>
+</footer>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+
+/* --- Theme Toggle --- */
+let isDark = false;
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+  document.getElementById('themeLabel').textContent = isDark ? 'Mode Clair' : 'Mode Sombre';
+}
+
+/* --- Progress bar --- */
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const p = (scrollTop / docHeight) * 100;
+  document.getElementById('progress').style.width = p + '%';
+});
+
+/* --- Reveal on scroll --- */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+/* --- Book Gallery Carousel --- */
+const galleries = {
+  1: { imgs: document.querySelectorAll('#gallery1 .gallery-img'), nav: document.querySelectorAll('#nav1 .gallery-dot'), current: 0 },
+  2: { imgs: document.querySelectorAll('#gallery2 .gallery-img'), nav: document.querySelectorAll('#nav2 .gallery-dot'), current: 0 }
+};
+
+function updateGallery(gid) {
+  const g = galleries[gid];
+  const total = g.imgs.length;
+  g.imgs.forEach((img, i) => {
+    img.className = 'gallery-img';
+    if (i === g.current) img.classList.add('active');
+    else if (i === (g.current - 1 + total) % total) img.classList.add('prev');
+    else if (i === (g.current + 1) % total) img.classList.add('next');
+    else img.classList.add('hidden');
+  });
+  g.nav.forEach((dot, i) => {
+    dot.classList.toggle('active', i === g.current);
+  });
+}
+
+function goTo(gid, idx) {
+  galleries[gid].current = idx;
+  updateGallery(gid);
+}
+
+// Auto-rotate galleries
+setInterval(() => {
+  galleries[1].current = (galleries[1].current + 1) % galleries[1].imgs.length;
+  updateGallery(1);
+}, 3800);
+setInterval(() => {
+  galleries[2].current = (galleries[2].current + 1) % galleries[2].imgs.length;
+  updateGallery(2);
+}, 4200);
+
+/* --- Click on gallery img to advance --- */
+document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+  carousel.addEventListener('click', (e) => {
+    const gid = carousel.id.replace('gallery', '');
+    const g = galleries[gid];
+    g.current = (g.current + 1) % g.imgs.length;
+    updateGallery(gid);
+  });
+});
+
+/* --- Custom cursor --- */
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+if (dot && ring) {
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+}
+
+/* --- Newsletter subscribe --- */
+function handleSubscribe(btn) {
+  btn.textContent = '✓ Inscrit !';
+  btn.style.background = 'var(--accent3)';
+  setTimeout(() => {
+    btn.textContent = 'S\'inscrire →';
+    btn.style.background = '';
+  }, 3000);
+}
+
+/* --- Navbar scroll effect --- */
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.boxShadow = window.scrollY > 50 ? '0 8px 40px var(--shadow)' : 'none';
+});
+
+</script>
+</body>
+</html>
